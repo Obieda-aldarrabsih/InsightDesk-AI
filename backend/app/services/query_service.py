@@ -32,15 +32,21 @@ class QueryService:
             threshold=threshold
         )
         
-        # 2. Generate
-        gen_result = await self.generator.generate_answer(question, retrieved_chunks)
-        answer_text = gen_result["text"]
-        citations_idx = gen_result["citations"]
-        
-        # 3. Score Confidence
-        score, tier, answered = scorer.calculate_confidence(
-            retrieved_chunks, citations_idx, answer_text
-        )
+        # 2. Below-threshold guard: do not call generator if no chunks meet relevance threshold
+        if not retrieved_chunks:
+            answer_text = "I don't have enough information to answer this confidently."
+            citations_idx = []
+            score, tier, answered = scorer.calculate_confidence([], [], answer_text)
+        else:
+            # 2. Generate
+            gen_result = await self.generator.generate_answer(question, retrieved_chunks)
+            answer_text = gen_result["text"]
+            citations_idx = gen_result["citations"]
+            
+            # 3. Score Confidence
+            score, tier, answered = scorer.calculate_confidence(
+                retrieved_chunks, citations_idx, answer_text
+            )
         
         # 4. Save Query Audit Log
         query_record = Query(

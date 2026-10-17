@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 import uuid
 
 from app.core.database import get_db
@@ -10,10 +10,13 @@ router = APIRouter(prefix="/api/v1", tags=["query"])
 
 class AskRequest(BaseModel):
     question: str
-    document_set_id: str | None = None
-    # For a real app, user_id and workspace_id come from the JWT auth token
-    user_id: str
-    workspace_id: str
+    document_set_id: str | None = Field(default=None, alias="documentSetId")
+    user_id: str = "00000000-0000-0000-0000-000000000001"
+    workspace_id: str = "00000000-0000-0000-0000-000000000001"
+
+    model_config = {
+        "populate_by_name": True
+    }
 
 @router.post("/query")
 async def ask_question(request: AskRequest, db: AsyncSession = Depends(get_db)):
