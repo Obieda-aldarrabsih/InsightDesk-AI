@@ -17,7 +17,7 @@ export const AskView = () => {
     setQuestion("");
     setIsAsking(true);
 
-    // Add a streaming placeholder to history
+    // Add an initial pending response to history
     const tempId = Date.now();
     setHistory(prev => [...prev, {
       id: tempId,
