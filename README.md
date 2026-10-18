@@ -12,6 +12,18 @@ InsightDesk AI is a retrieval-augmented knowledge and support assistant that ans
 
 ---
 
+## Visual Preview & Interface
+
+| Grounded AI Assistant with Citations | Knowledge Base & Document Ingestion |
+| :---: | :---: |
+| ![Grounded AI Assistant](docs/screenshots/01-ask-assistant.png) | ![Document Ingestion Pipeline](docs/screenshots/02-document-ingestion.png) |
+
+| LLM & Retrieval Thresholds Settings |
+| :---: |
+| ![Settings & Retrieval Configuration](docs/screenshots/03-settings-config.png) |
+
+---
+
 ## The Problem
 
 Customer support and operations teams answer the same repetitive policy questions dozens of times a day. While general-purpose LLMs can draft text quickly, they frequently hallucinate plausible-sounding falsehoods on edge-case policy, shipping rates, or legal terms.
