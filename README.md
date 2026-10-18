@@ -12,15 +12,22 @@ InsightDesk AI is a retrieval-augmented knowledge and support assistant that ans
 
 ---
 
-## Visual Preview & Interface
+## Visual Preview & Interface (Light & Dark Mode)
 
-| Grounded AI Assistant with Citations | Knowledge Base & Document Ingestion |
+### Grounded AI Assistant with Inline Citations
+| Light Mode | Dark Mode |
 | :---: | :---: |
-| ![Grounded AI Assistant](docs/screenshots/01-ask-assistant.png) | ![Document Ingestion Pipeline](docs/screenshots/02-document-ingestion.png) |
+| ![Grounded AI Assistant Light](docs/screenshots/01-ask-assistant-light.png) | ![Grounded AI Assistant Dark](docs/screenshots/01-ask-assistant-dark.png) |
 
-| LLM & Retrieval Thresholds Settings |
-| :---: |
-| ![Settings & Retrieval Configuration](docs/screenshots/03-settings-config.png) |
+### Knowledge Base & Document Chunking Pipeline
+| Light Mode | Dark Mode |
+| :---: | :---: |
+| ![Document Ingestion Light](docs/screenshots/02-document-ingestion-light.png) | ![Document Ingestion Dark](docs/screenshots/02-document-ingestion-dark.png) |
+
+### LLM Thresholds & Retrieval Parameters
+| Light Mode | Dark Mode |
+| :---: | :---: |
+| ![Settings Configuration Light](docs/screenshots/03-settings-config-light.png) | ![Settings Configuration Dark](docs/screenshots/03-settings-config-dark.png) |
 
 ---
 
